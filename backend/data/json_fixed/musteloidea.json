@@ -1,0 +1,125 @@
+[
+  {
+    "text": "Musteloidea superfamily",
+    "styles": "color: red;",
+    "link": "https://en.wikipedia.org/wiki/Musteloidea_superfamily",
+    "outline": [
+      {
+        "text": "Mephitidae family",
+        "styles": "color: blue;",
+        "link": "https://en.wikipedia.org/wiki/Mephitidae",
+        "outline": [
+          {
+            "text": "Striped skunk",
+            "styles": "color: green;",
+            "link": "https://en.wikipedia.org/wiki/Striped_skunk",
+            "outline": []
+          },
+          {
+            "text": "Spotted skunk",
+            "styles": "color: green;",
+            "link": "https://en.wikipedia.org/wiki/Spotted_skunk",
+            "outline": []
+          }
+        ]
+      },
+      {
+        "text": "Procyonidae family",
+        "styles": "color: blue;",
+        "link": "https://en.wikipedia.org/wiki/Procyonidae",
+        "outline": [
+          {
+            "text": "Racoon",
+            "styles": "color: green;",
+            "link": "https://en.wikipedia.org/wiki/Raccoon",
+            "outline": []
+          }
+        ]
+      },
+      {
+        "text": "Mustelidae family",
+        "styles": "color: blue;",
+        "link": "https://en.wikipedia.org/wiki/Mustelidae",
+        "outline": [
+          {
+            "text": "Taxidiinac subfamily",
+            "styles": "color: blue;",
+            "link": "https://en.wikipedia.org/wiki/Taxidiinae",
+            "outline": [
+              {
+                "text": "American Badger",
+                "styles": "color: green;",
+                "link": "https://en.wikipedia.org/wiki/American_badger",
+                "outline": []
+              }
+            ]
+          },
+          {
+            "text": "Lutrinae subfamily",
+            "styles": "color: blue;",
+            "link": "https://en.wikipedia.org/wiki/Lutrinae",
+            "outline": [
+              {
+                "text": "North American River Otter",
+                "styles": "color: green;",
+                "link": "https://en.wikipedia.org/wiki/North_American_river_otter",
+                "outline": []
+              }
+            ]
+          },
+          {
+            "text": "Guloninae subfamily",
+            "styles": "color: blue;",
+            "link": "https://en.wikipedia.org/wiki/Gulo",
+            "outline": [
+              {
+                "text": "Fisher",
+                "styles": "color: green;",
+                "link": "https://en.wikipedia.org/wiki/Fisher_(animal)",
+                "outline": []
+              }
+            ]
+          },
+          {
+            "text": "Mustelinae subfamily",
+            "styles": "color: blue;",
+            "link": "https://en.wikipedia.org/wiki/Mustelinae",
+            "outline": [
+              {
+                "text": "Weasels",
+                "styles": "color: blue;",
+                "link": "https://en.wikipedia.org/wiki/Weasel",
+                "outline": [
+                  {
+                    "text": "Least weasel",
+                    "styles": "color: green;",
+                    "link": "https://en.wikipedia.org/wiki/Least_weasel",
+                    "outline": []
+                  },
+                  {
+                    "text": "Long-tailed weasel",
+                    "styles": "color: green;",
+                    "link": "https://en.wikipedia.org/wiki/Long-tailed_weasel",
+                    "outline": []
+                  },
+                  {
+                    "text": "Short-tailed weasel",
+                    "styles": "color: green;",
+                    "link": "https://en.wikipedia.org/wiki/Short-tailed_weasel",
+                    "outline": []
+                  },
+                  {
+                    "text": "Internet Explorer does not support short-tailed weasel. For Internet Explorer users, use either of the first two weasels instead.",
+                    "styles": "color: green;",
+                    "link": "https://en.wikipedia.org/wiki/Weasel",
+                    "outline": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

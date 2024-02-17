@@ -1,0 +1,117 @@
+/* https://iamkate.com/code/tree-views/ */
+
+.tree {
+  --spacing: 1.5rem;
+  --radius: 10px;
+}
+
+.tree li {
+  display: block;
+  position: relative;
+  padding-left: calc(2 * var(--spacing) - var(--radius) - 2px);
+}
+
+.tree ul {
+  margin-left: calc(var(--radius) - var(--spacing));
+  padding-left: 0;
+}
+
+.tree ul li {
+  border-left: 2px solid black;
+}
+
+.tree ul li:last-child {
+  border-color: transparent;
+}
+
+.tree ul li::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: calc(var(--spacing) / -2);
+  left: -2px;
+  width: calc(var(--spacing) + 2px);
+  height: calc(var(--spacing) + 1px);
+  border: solid black;
+  border-width: 0 0 2px 2px;
+}
+
+.tree summary {
+  display: block;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 1px 15px 3px 13px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: px;
+  margin-right: 20px;
+  width: fit-content;
+}
+
+.tree summary::marker,
+.tree summary::-webkit-details-marker {
+  display: none;
+}
+
+.tree summary:focus {
+  outline: none;
+}
+
+.tree summary:focus-visible {
+  outline: 1px dotted #000;
+}
+
+/* clickable markers for expand/collapse */
+.tree li::after,
+.tree summary::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: calc(var(--spacing) / 2 - var(--radius));
+  left: calc(var(--spacing) - var(--radius) - 1px);
+  width: calc(2 * var(--radius));
+  height: calc(2 * var(--radius));
+  border-radius: 50%;
+  background: #ddd;
+}
+
+.tree summary::before {
+  z-index: 1;
+  background: rgb(197, 103, 207) url('expand-collapse.svg') 0 0;
+}
+
+.tree details[open] > summary::before {
+  background-position: calc(-2 * var(--radius)) 0;
+}
+
+/* custom classes */
+
+li div.li_wrap {
+  border: transparent solid 1px;
+  border-radius: 7px;
+  width: fit-content;
+  padding: 1px 13px 3px 15px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 1px;
+  margin-right: 20px;
+  background-color: #eee;
+}
+
+li:first-child {
+  padding-top: 1px;
+}
+
+li {
+  padding-bottom: 2px;
+}
+
+ul.tree {
+  text-align: left;
+}
+
+/* fix bug on odd trees, but it reappears on even trees */
+.tree > li > details > ul > li::before {
+  left: -1px;
+}

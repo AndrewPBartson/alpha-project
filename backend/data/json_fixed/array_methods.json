@@ -1,0 +1,694 @@
+[
+  {
+    "text": "Array Methods",
+    "styles": "",
+    "link": "",
+    "outline": [
+      {
+        "text": "Syntax note -",
+        "styles": "",
+        "link": "",
+        "outline": [
+          {
+            "text": "[, itemN]",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "Means - method takes any number of elements",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "Example - ",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "a.concat(item[, itemN])",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "text": "Array.from()",
+        "styles": "",
+        "link": "",
+        "outline": [
+          {
+            "text": "- convert Nodelist and HTMLCollection to real array",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "const nodelist = \n   document.querySelectorAll(‘.product’)",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "const productArray = Array.from(nodelist)",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "let revProducts = productArray.reverse();",
+            "styles": "",
+            "link": ""
+          }
+        ]
+      },
+      {
+        "text": "Destructive / Non-destructive",
+        "styles": "",
+        "link": ""
+      },
+      {
+        "text": "indexOf(searchElement[, from])",
+        "styles": "",
+        "link": "",
+        "outline": [
+          {
+            "text": "Find all occurrences of element",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "var indices = [];\nvar array = ['a', 'b', 'a', 'c', 'a', 'd'];\nvar element = 'a';\nvar idx = array.indexOf(element);\nwhile (idx != -1) {\n  indices.push(idx);\n  idx = array.indexOf(element, idx + 1);\n}\nconsole.log(indices);\n// [0, 2, 4]",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "var indices = [];\nvar chars = ['a', 'b', 'a', 'c', 'a', 'd'];\nvar element = 'a';\nvar idx = chars.indexOf(element);\nwhile (idx != -1) {\n  indices.push(idx);\n  idx = chars.indexOf(element, idx + 1);\n}\nconsole.log(indices);\n// [0, 2, 4]",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "text": "var a = [2, 9, 9]; \na.indexOf(2); // 0 \na.indexOf(7); // -1 // element not in array",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "Parameters",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "searchElement",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "Element to locate in the array.",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "text": "fromIndex",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "Optional",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "Index to start searching",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "If the index is greater than or equal to array's length, -1 is returned, which means array is not searched.",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "If the provided index value is a negative number, it is taken as the offset from the end of the array. Note: if provided index is negative, the array is still searched from front to back. If the calculated index is less than 0, then the whole array will be searched. Default: 0 (entire array is searched).",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "text": "Returns first index of searchElement in array; -1 if not found.",
+            "styles": "",
+            "link": ""
+          }
+        ]
+      },
+      {
+        "text": "isArray(val)",
+        "styles": "",
+        "link": "",
+        "outline": [
+          {
+            "text": "Tells if the passed value is an Array",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "if (Array.isArray(input) {\n    // do something\n}",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "Returns a boolean",
+            "styles": "",
+            "link": ""
+          }
+        ]
+      },
+      {
+        "text": "join(sep)",
+        "styles": "",
+        "link": "",
+        "outline": [
+          {
+            "text": "Joins array items to a string - w/ items delimited by \"sep\" parameter",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "var animals = [\"monkey\", \"cat\", \"fish\", \"lizard\"];\nvar animal_str = animals.join();  // inserts commas\nvar animal_str_2 = animals.join(\"\"); // monkeycatfishlizard",
+            "styles": "",
+            "link": ""
+          }
+        ]
+      },
+      {
+        "text": "pop()",
+        "styles": "",
+        "link": "",
+        "outline": [
+          {
+            "text": "Removes element from the end",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "Returns last element",
+            "styles": "",
+            "link": ""
+          }
+        ]
+      },
+      {
+        "text": "push(item[, itemN])",
+        "styles": "",
+        "link": "",
+        "outline": [
+          {
+            "text": "Adds element(s) to the end",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "arr.push(1);",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "Weird ability of push -",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "let journal = [];\n\nfunction addEntry(events, squirrel) {\n  journal.push({events, squirrel});\n}\nconsole.log(journal);\n// []\naddEntry(\"test\", \"happy\");\nconsole.log(journal);\n// [{events: \"test\", squirrel: \"happy\"}]",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "\"If a property name in brace notation isn’t followed by a value, its value is taken from the binding with the same name.\"",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "text": "Returns new length of array",
+            "styles": "",
+            "link": ""
+          }
+        ]
+      },
+      {
+        "text": "shift()",
+        "styles": "",
+        "link": "",
+        "outline": [
+          {
+            "text": "Removes element from the start",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "Returns first element",
+            "styles": "",
+            "link": ""
+          }
+        ]
+      },
+      {
+        "text": "unshift(item1, item2)",
+        "styles": "",
+        "link": "",
+        "outline": [
+          {
+            "text": "Adds element(s) to the start",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "arr.unshift(1);",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "Returns new length of array",
+            "styles": "",
+            "link": ""
+          }
+        ]
+      },
+      {
+        "text": "splice(start, delcount[, itemN])",
+        "styles": "",
+        "link": "",
+        "outline": [
+          {
+            "text": "Destructive",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "- delete zero or more elements and replace with zero or more elements.",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "Params",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "1) Start index in array",
+                "styles": "",
+                "link": "",
+                "outline": [
+                  {
+                    "text": "Remove everything after start index, inclusive)",
+                    "styles": "",
+                    "link": ""
+                  }
+                ]
+              },
+              {
+                "text": "2) Number of elements to remove",
+                "styles": "",
+                "link": "",
+                "outline": [
+                  {
+                    "text": "Default - Remove to the end",
+                    "styles": "",
+                    "link": ""
+                  }
+                ]
+              },
+              {
+                "text": "3) Zero or more elements to add",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "text": "Params - more",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "array.splice(start)\narray.splice(start, deleteCount)\narray.splice(start, deleteCount, item1, item2, ...)",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "start",
+                "styles": "",
+                "link": "",
+                "outline": [
+                  {
+                    "text": "Index at which to start changing the array",
+                    "styles": "",
+                    "link": ""
+                  },
+                  {
+                    "text": "If greater than length of array, actual starting index will be set to length of array.",
+                    "styles": "",
+                    "link": ""
+                  },
+                  {
+                    "text": "If negative, will begin that many elements from end of array (with origin -1) and will be set to 0 if absolute value is greater than length of array.",
+                    "styles": "",
+                    "link": ""
+                  }
+                ]
+              },
+              {
+                "text": "deleteCount",
+                "styles": "",
+                "link": "",
+                "outline": [
+                  {
+                    "text": "Optional",
+                    "styles": "",
+                    "link": ""
+                  },
+                  {
+                    "text": "An integer indicating the number of old array elements to remove. If deleteCount is 0, no elements are removed. In this case, you should specify at least one new element. If deleteCount is greater than the number of elements left in the array starting at start, then all of the elements through the end of the array will be deleted.",
+                    "styles": "",
+                    "link": ""
+                  },
+                  {
+                    "text": "If deleteCount is omitted, or if its value is larger than array.length - start, then all of the elements beginning with start index on through the end of the array will be deleted.",
+                    "styles": "",
+                    "link": ""
+                  }
+                ]
+              },
+              {
+                "text": "item1, item2, ...",
+                "styles": "",
+                "link": "",
+                "outline": [
+                  {
+                    "text": "Optional",
+                    "styles": "",
+                    "link": ""
+                  },
+                  {
+                    "text": "The elements to add to the array, beginning at the start index. If you don't specify any elements, splice() will only remove elements from the array.",
+                    "styles": "",
+                    "link": ""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "text": "- Delete first element",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "var fruits = ['Strawberry', 'Apple', 'Banana'];\nvar removedItem = fruits.splice(0, 1);\n\nconsole.log(fruits); \n// ['Apple', 'Banana']",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "text": "- Delete element from middle of array",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "var letters = ['a', 'b', 'c', 'd']",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "letters.splice(2, 1)",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "Remove the element at index 2",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "// ['a', 'b', 'd']",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "Also possible with slice();",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "text": "Delete element and replace with 2 elements",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "var items = [1, 2, 3, 4]",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "items.splice(1, 1, 'ok', 'yes')",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "At index 1, remove 1 item and add \"ok\" and \"yes\".",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "// [1, 'ok', 'yes', 3, 4]",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "text": "Returns array of deleted elements",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "If one element removed, returns array of one.",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "If no elements removed, returns empty array.",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "text": "var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];\n\n// insert 'drum' at index 2\nmyFish.splice(2, 0, 'drum'); \n\n//  [\"angel\", \"clown\", \"drum\", \"mandarin\", \"sturgeon\"]\n// returns [ ]\n\n// remove 1 item at index 2\nmyFish.splice(2, 1); \n\n//  [\"angel\", \"clown\", \"mandarin\", \"sturgeon\"]\n// returns [\"drum\"]",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "splice() can do same as push()",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "results.push(num[i]);",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "...is the same as...",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "results.splice( results.length, 0, num[i] )",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "function isEven(num) {\n  var results = [];\n  for (var i = 0; i < num.length; i++) {\n    if (num[i] % 2 === 0) {\n      //results.push(num[i]);\n      // ...is the same as ...\n      results.splice(results.length,0,num[I]);\n    }\n  }\n  return results;\n}\n\nvar output = isEven([1, 4, 5, 6, 10, 13]);\nconsole.log(output); // --> [4, 6, 10]",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "text": "Examples",
+            "styles": "",
+            "link": ""
+          }
+        ]
+      },
+      {
+        "text": "slice(begin, end)",
+        "styles": "",
+        "link": "",
+        "outline": [
+          {
+            "text": "Returns a sub-array.",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "- Array.slice() is like String.slice().",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "Begin index - included",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "End index - excluded",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "Example",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "var fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];\nvar citrus = fruits.slice(1, 3);\n\n// fruits - ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango']\n// citrus - ['Orange','Lemon']",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "text": "Non-destructive version of .pop()",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "var lastOne = ['a', 'k', 'j', 'x'].slice(-1);",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": ".slice(0, -1); // same",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "text": "Easily copy an array",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "let newArr = arr.slice(0)",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "Returns a shallow copy of the array",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "Strings, booleans, and numbers are copied by value, but objects are copied by reference.",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "text": "Delete third element of array",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "Cowboy trick - Spread operator",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "var items = [1, 2, 3, 4, 5]",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "To remove item at index 3, do multiple spread and slice operations -",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "Take slice from index 0 to, but not including, index 2",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "Take slice from index 3 to end",
+                "styles": "",
+                "link": ""
+              },
+              {
+                "text": "[...items.slice(0, 2), ...items.slice(3)] // [1, 2, 4, 5]",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "text": "concat(item[, itemN])",
+        "styles": "",
+        "link": "",
+        "outline": [
+          {
+            "text": "concat() // push()",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "let arr1 = ['a', 'b', 'c'];\nlet arr2 = ['d', 'e', 'f'];\n\nvar arr3 = arr1.concat(arr2);\nconsole.log(arr3); \n> [“a”, “b”, “c”, “d”, “e”, “f”]\n\nlet arr4 = arr1.push(arr2);\nconsole.log(arr4);\n> 4\nconsole.log(arr1);\n> [“a”, “b”, “c”, [“d”, “e”, “f”]]",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "text": "Example - concat() + arguments",
+            "styles": "",
+            "link": "",
+            "outline": [
+              {
+                "text": "function joinThreeArrays(arr1, arr2, arr3) {\n  let result = [];\n  for (let i = 0; i < arguments.length; i++) {\n    result = result.concat(arguments[i]);\n  }\n  return result;\n}",
+                "styles": "",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "text": "// combine arrays\nconst array1 = ['a', 'b', 'c'];\nconst array2 = ['d', 'e', 'f'];\nconst array3 = array1.concat(array2);\n\n[\"a\", \"b\", \"c\", \"d\", \"e\", \"f\"]",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "// add values to array\nconst arr1 = ['a', 'b', 'c'];\nconst result = arr1.concat(1, [2, 3]);\n\n['a', 'b', 'c', 1, 2, 3]",
+            "styles": "",
+            "link": ""
+          },
+          {
+            "text": "Returns new array with items added",
+            "styles": "",
+            "link": ""
+          }
+        ]
+      }
+    ]
+  }
+]
