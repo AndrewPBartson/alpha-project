@@ -1,12 +1,8 @@
-const Button = () => {
+const Button = ({ title }) => {
   return (
-    <div className='row m-4'>
-      <div className='col-12'>
-        <button type='button' className='btn btn-outline-primary'>
-          I am a button
-        </button>
-      </div>
-    </div>
+    <button type='button' className='btn btn-outline-primary'>
+      {title}
+    </button>
   )
 }
 export default Button

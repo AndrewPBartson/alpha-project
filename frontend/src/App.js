@@ -14,7 +14,9 @@ function App() {
         </div>
       </div>
       <div className='row'>
-        <DataPanel />
+        <div className='col-sm-12 col-md-7 pt-2'>
+          <DataPanel />
+        </div>
         <ControlPanel />
         <Counter />
       </div>
