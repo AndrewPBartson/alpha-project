@@ -2,11 +2,14 @@
 
 # dependencies
 /backend/node_modules
+/backend/package-lock.json
 /frontend/node_modules
+/frontend/package-lock.json
 /frontend/.pnp
 /frontend/.pnp.js
 
 # development
+/config/keys_dev.js
 /staging
 /backend/data/json_staging
 .env
