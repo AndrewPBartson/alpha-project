@@ -1,5 +1,8 @@
 /* https://iamkate.com/code/tree-views/ */
 
+* {
+  box-sizing: border-box;
+}
 .tree {
   --spacing: 1.5rem;
   --radius: 10px;
@@ -47,6 +50,7 @@
   margin-left: px;
   margin-right: 20px;
   width: fit-content;
+  background-color: #fff;
 }
 
 .tree summary::marker,
@@ -62,7 +66,7 @@
   outline: 1px dotted #000;
 }
 
-/* clickable markers for expand/collapse */
+/* clickable markers for expand/collapse - round with cross bars */
 .tree li::after,
 .tree summary::before {
   content: '';
@@ -73,12 +77,14 @@
   width: calc(2 * var(--radius));
   height: calc(2 * var(--radius));
   border-radius: 50%;
-  background: #ddd;
+  border: black solid 1px;
+  background: #fff; /* b-g is needed to cover other element */
 }
 
 .tree summary::before {
   z-index: 1;
   background: rgb(197, 103, 207) url('expand-collapse.svg') 0 0;
+  border: none;
 }
 
 .tree details[open] > summary::before {
@@ -87,8 +93,12 @@
 
 /* custom classes */
 
+li {
+  white-space: pre-wrap;
+}
+
 li div.li_wrap {
-  border: transparent solid 1px;
+  border: black solid 1px;
   border-radius: 7px;
   width: fit-content;
   padding: 1px 13px 3px 15px;
@@ -96,7 +106,7 @@ li div.li_wrap {
   margin-bottom: 2px;
   margin-left: 1px;
   margin-right: 20px;
-  background-color: #eee;
+  background-color: #fff;
 }
 
 li:first-child {
@@ -111,7 +121,12 @@ ul.tree {
   text-align: left;
 }
 
-/* fix bug on odd trees, but it reappears on even trees */
-.tree > li > details > ul > li::before {
+/* fix bug in alignment of branching lines */
+/* looks better in chrome but worse in firefox and edge */
+
+.even {
+  left: -0.5px;
+}
+.odd {
   left: -1px;
 }

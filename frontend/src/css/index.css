@@ -1,0 +1,69 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f8f9fb;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  text-align: center;
+  background-color: #f8f9fb;
+}
+
+/* navbar */
+.auth_buttons {
+  display: flex;
+}
+.login_btn,
+.register_btn {
+  margin: 0 8px;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: rgb(112, 76, 182);
+}
+
+.dataPanel {
+  padding-top: 0.5rem;
+}
+
+.radio-list {
+  min-height: 15rem;
+  width: 300px;
+}
+
+.nav_wrapper {
+  background-color: #ffffff;
+}
+
+.no_results_box {
+  display: inline-block; /* shrink-to-fit content */
+  background-color: #fff;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 16px 16px 0 16px; /* space inside the box */
+  text-align: center;
+}

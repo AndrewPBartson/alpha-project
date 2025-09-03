@@ -1,8 +1,8 @@
-import './tree.css'
+// import '../css/tree.css'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchTreeData } from '../features/tree-data/treeDataSlice'
-import Tree from './Tree'
+import TreeAccordion from './TreeAccordion'
 
 const DataPanel = () => {
   const dispatch = useDispatch()
@@ -25,9 +25,13 @@ const DataPanel = () => {
   }
 
   return (
-    <div className='row'>
-      <div className='col-12'>
-        <Tree data={treeData} />
+    <div className='col-sm-12 col-md-7 pt-2'>
+      <div className='row'>
+        <div className='col-12'>
+          {/* <Tree data={treeData} /> */}
+
+          <TreeAccordion data={treeData} />
+        </div>
       </div>
     </div>
   )

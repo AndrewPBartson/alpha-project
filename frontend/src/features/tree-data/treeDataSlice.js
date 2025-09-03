@@ -8,10 +8,23 @@ const initialState = {
 }
 
 // Async thunk to fetch data from the API
-export const fetchTreeData = createAsyncThunk('data/fetchData', async () => {
-  const response = await axios.get('http://localhost:5470/json')
-  return response.data
-})
+export const fetchTreeData = createAsyncThunk(
+  'treeData/fetchData',
+  async (fileName, { rejectWithValue }) => {
+    try {
+      console.log('fileName: ', fileName)
+      const response = await axios.post(
+        'http://localhost:5470/api/data/json',
+        fileName
+      )
+      // The value we return becomes the `fulfilled` action payload
+      return response.data
+    } catch (err) {
+      console.error('fetchTreeData error:', err)
+      return rejectWithValue('Failed to load tree data')
+    }
+  }
+)
 
 export const treeDataSlice = createSlice({
   name: 'treeData',

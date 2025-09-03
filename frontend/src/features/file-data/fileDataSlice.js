@@ -11,7 +11,7 @@ const initialState = {
 export const fetchFileData = createAsyncThunk(
   'fileData/fetchData',
   async () => {
-    const response = await axios.get('http://localhost:5470/listJsonFiles')
+    const response = await axios.get('http://localhost:5470/api/file_list/json')
     return response.data
   }
 )
@@ -27,7 +27,7 @@ const fileDataSlice = createSlice({
       })
       .addCase(fetchFileData.fulfilled, (state, action) => {
         state.status = 'succeeded'
-        state.treeData = action.payload
+        state.fileData = action.payload
       })
       .addCase(fetchFileData.rejected, (state, action) => {
         state.status = 'failed'
