@@ -11,7 +11,10 @@
 # development
 /config/keys_dev.js
 /staging
+/staging_alpha
+/staging_tree
 /backend/data/json_staging
+todo_list.txt
 .env
 
 # testing
