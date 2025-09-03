@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const { fetchJsonByName } = require('../../controllers/dataController')
+const { readFileDemo } = require('../../controllers/demoController')
 
 // @route   POST api/data/json
 // @desc    return json from specified file
 // @access  Public
 
-router.post('/json', fetchJsonByName)
+router.post('/read', readFileDemo)
 
 module.exports = router
