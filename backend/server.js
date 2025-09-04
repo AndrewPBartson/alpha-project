@@ -14,7 +14,6 @@ const dataRoutes = require('./routes/api/dataRoutes')
 const demoRoutes = require('./routes/api/demoRoutes')
 const filesRoutes = require('./routes/api/filesRoutes')
 const fixJsonData = require('./dataFactory/reformatJson')
-const projectRoutes = require('./routes/api/projectRoutes')
 
 const app = express()
 const port = process.env.PORT || 5470
@@ -32,7 +31,6 @@ app.use('/api/convert', convertRoutes)
 app.use('/api/data', dataRoutes)
 app.use('/api/demo', demoRoutes)
 app.use('/api/file_list', filesRoutes)
-app.use('/api/project', projectRoutes)
 
 // create file paths - * fs needs path to root *
 const opmlFilePath = path.join(
