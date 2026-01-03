@@ -10,7 +10,7 @@ This project displays converted data as a set of clickable elements, comparable 
 
 The user interface has the following main components -
 
-- DataPanel - a React component that displays one of the available json files. This component knows how to display the json in a nested clickable tree.
+- DataPanel - a React component that displays one of the available json files. This component knows how to parse the json and display as a nested clickable tree.
 
 - Control Panel -
 
@@ -20,11 +20,9 @@ The user interface has the following main components -
     - will have select option list of a set of JSON files on the backend (currently list is hard coded)
     - has a button to load the selected JSON file into the DataPanel (currently file name is hardcoded)
 
-  - FileSelector for OPML
+  - Button: "Convert new files for viewing"
 
-    - Under construction
-    - will have a select option list of OPML files on the backend (currently list is hard coded)
-    - has a button to convert the OPML file to nested tree json (currently file name is hard coded)
+    - This button becomes active (not grayed out) if there are any opml files that do not have a corresponding json version.
 
 ## Express back end
 
@@ -32,7 +30,7 @@ The backend has several APIs -
 
 ### API for converting opml to json
 
-- Step 1 - Convert opml to json and save to file. The structure of the resulting json data is not very useable.
+- Step 1 - Convert opml to json and save to file. Converting to json is a big step but the json needs restructuring to be displayed properly in React.
 - Step 2 - Refactor preliminary version of json to nested tree json so it can be displayed in expandable/collapsible React components. Save the refactored json to file.
   Status - Tested with Postman
 
@@ -95,7 +93,7 @@ The backend has several APIs -
 
 ### How to obtain .opml data
 
-Most of the data in this app was originally derived from .mmap data from Mind Manager, a proprietary mind mapping application. The .mmap file must be exported as .opml which is Outline Processor Markup Language, an XML format. Unfortunately the conversion from .mmap to .opml requires proprietary software that is not easily bolted on to this app. Therefore this app doesn't provide methods for converting from .mmap to .opml data.
+Most of the data in this app was originally derived from .mmap data from Mind Manager, a proprietary mind mapping application. The .mmap file must be exported as .opml also known as Outline Processor Markup Language, an XML format. Unfortunately the conversion from .mmap to .opml requires proprietary software that is not easily bolted on to this app. Therefore this app doesn't provide automated methods for converting from .mmap to .opml data.
 
 next question for chat gpt
 

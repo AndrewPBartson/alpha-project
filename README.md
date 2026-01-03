@@ -8,19 +8,26 @@ Consists of backend and frontend, each with their own README file.
 
 #### Data factory
 
-- does the conversion so that data from a outline file so that the frontend can display it as html.
+- does several conversions starting with an outline file (.opml) and producing a json file that is specially formatted.
 
 ### Frontend
 
 #### JSON Viewer
 
-Allows user to select and view a json file that is in "tree" format
+The user interface is built in React and allows the user to select and view a json file that is in "tree" format.
+
+#### Source of outline data (opml)
+
+A file in a proprietary format (.mmap) is manually exported from MindManager software (by Mindjet) as an Outline Processor Markup Language (.opml) file.
 
 #### Status
 
-- Inherent limitation: the .mmap file must be exported manually into OPML format.
-  The current method is -
+- Decisions are needed about access to the advanced features. Random users should not be able to write files. One option is to lock access to certain features. Another option is to move the advanced features to a separate secure project.
 
-- Improvements needed:
-  - Currently the name of the opml file to convert is hard coded in backend/server.js. Instead there should be a UI element to select the opml to convert.
-  - When a new .opml file is added to backend/data/opml, the opml file should be automatically converted and saved in json_fixed folder.
+- Problem:
+
+  - Currently opml files are manually converted by hardcoding the name of the opml file to convert (manually). This is inefficient and needs to be improved.
+
+  Potential solution -
+
+  - There is an "Update files" button that initiates a check of the opml files to determine if each one has .json version. If any json versions are missing, the opml conversion process should be executed.

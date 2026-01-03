@@ -2,7 +2,7 @@
 
 #### Reset Github URL
 
-git remote set-url origin git@github-main:AndrewPBartson/alpha_project.git
+git remote set-url origin git@github-main:AndrewPBartson/alpha-project.git
 
 ### Project design - Not current, see Alpha Mindmap
 
